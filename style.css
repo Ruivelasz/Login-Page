@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    background-color: var(--color-background);
+    font-family: 'Noto Sans', sans-serif;
+    transition: background 0.2s linear;
+}
+
+body.light {
+    background: white;
+}
+
+body * {
+    box-sizing: border-box;
+
+}
+
+:root {
+
+    --color-background:#201b2c ;
+    --color-black: #212121;
+    --color-text: #77ffc0;
+    --color-ice:#f0ffffde;
+    --color-light-grey: #514869;
+    --color-purple: #2f2841;
+    --color-light-green: #00ff88;
+    --color-purple-dark: #2b134b;
+    --color-green-dark: #00ff8052;
+    --color-light:white;
+    --color-sun: #f39c12;
+    --color-moon: #f1c40f;
+    --color-light-white: #fff;
+    
+}
+
+.main-login{        /* Background geral da pagina */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login > h1 {
+    font-size: 2.5vw;
+    color: var(--color-text)
+}
+
+.left-login-image{
+    width: 30vw;
+}
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login{       /* Box toda da area de login */
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: var(--color-purple);
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px var(--color-black);
+}
+
+.card-login > h1 {
+    color: var(--color-light-green);
+    font-size: 3vw;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield{  /* Caixa de Usuario e Senha */
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: var(--color-light-grey);
+    color: var(--color-ice);
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px var(--color-black);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label {      /*Cor do nome em cima da caixa de preencher login*/
+    color: var(--color-ice);
+    margin-bottom: 10px;
+}
+
+.textfield > input {
+    color: var(--color-light-grey);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: var(--color-light-grey);
+    color: var(--color-ice);
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px var(--color-black);
+    outline: none;
+    box-sizing: border-box; 
+}
+
+.btn-login{          /* Botão de Login */
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--color-purple-dark); 
+    background: var(--color-light-green);
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px var(--color-green-dark);
+}
+
+.input::placeholder{
+    background: var(--color-purple);
+    backface-visibility: none;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-light-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    background-color: var(--color-moon); /* cor do botão modo light*/
+    width: 200px;
+    height: 100px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.button::before{ /* Bolinha */
+    position: absolute;
+    content: '';
+    background-color: var(--color-ice);
+    width: 41px;
+    height: 41px;
+    border-radius: 110px;
+    margin: 1px;
+    transition: 0.2s;
+}
+
+input:checked + .button{
+    background-color: var(--color-light-grey);
+}
+
+input{
+    display: none;
+}
+
+input:checked + .button::before{
+    transform: translateX(40px);
+}
+
+.fa-moon {
+    color: var(--color-black);
+}
+
+.fa-sun {
+    color: var(--color-black);
+}
+
+
+@media only screen and (max-width: 950px){    /*comandos de compatibilidade de dispositivos*/
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .main-login{
+        flex-direction: column;
+    }
+    .left-login > h1{
+        display: none;
+    }
+    .left-login{
+       width: 100%;
+       height: auto;  
+    }
+    .right-login{
+        width: 100%;
+        height: auto;  
+     }
+     .left-login-image{
+        width: 50vw;
+     }
+     .card-login{
+        width: 90%;
+     }
+}
